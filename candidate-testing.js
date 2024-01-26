@@ -37,6 +37,7 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++) {
     candidateAnswers[i] = input.question(`${i+1}) ${questions[i]}`)
+    
   console.log(`Your Answer: ${candidateAnswers[i]}`);
   console.log(`Correct Answer: ${correctAnswers[i]}\n`);
   }
@@ -47,6 +48,11 @@ function gradeQuiz(candidateAnswers) {
   for (let i = 0; i < candidateAnswers.length; i++) {
     let answer = candidateAnswers[i];
     let correct = correctAnswers[i];
+    if (answer.toLowerCase() === correct.toLowerCase()) {
+      console.log("You are correct!\n");
+    } else {
+      console.log("You are incorrect.\n");
+    } 
   }
 
 
